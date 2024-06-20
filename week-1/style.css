@@ -1,0 +1,156 @@
+html, body{
+    font-family: 'Times New Roman', Times, serif;
+    height: 100%;
+    overflow-y: auto;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.navbar{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ededed; 
+
+}
+.nav-left{
+    text-align: left;
+}
+.menu{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    margin-right: 20px; 
+}
+.menu a{
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+.menu-trigger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+#menu-checkbox {
+    display: none;
+}
+.header{
+    display: flex;
+    height: 200px;
+    background-color: #cbdced;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    justify-content: center;
+    align-items: center; 
+}
+.main-content{
+    display: flex;
+    flex-direction: column; /* 垂直排列内容 */
+    align-items: center; /* 垂直居中 */
+    padding: 20px;
+    flex-wrap: wrap; 允许子元素换行
+    justify-content: center; /* 水平居中 */
+    align-items: center; 
+    position: relative;
+}
+.section{
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    font-weight: bold;
+    margin-top: 40px;
+    font-size: 20px;
+}
+.grid-container {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 設置兩列 */
+    grid-template-rows: 1fr 1fr; /* 設置兩行 */
+    gap: 10px; 
+    width: 100%;
+    max-width: 1200px;
+}
+
+.box {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    background-color: #8798a9; /* 背景色 */
+    border: none; 
+    padding: 20px; /* 内边距 */
+    font-size: 16px; /* 字体大小 */
+    margin: 10px; /* Box之间的间距 */
+    height: 15vh;
+}
+.btn{
+    justify-content: center; /* 水平居中 */
+    background-color: #dcedfd; /* 背景色 */
+    border: none; 
+    padding: 10px; /* 内边距 */
+    margin-top: 50px;
+    text-align: center;
+}
+
+@media (min-width: 800px) and (max-width: 1199px) {
+    .grid-container {
+        width: 100%;
+    }
+}
+@media (max-width: 799px) {
+    .menu {
+        display: block; /* 变成块级元素 */
+        text-decoration: none; /* 移除下划线 */
+        padding: 10px 0; /* 上下内边距 */
+        color: #000;
+        display: none;
+        margin: 10px;
+    }
+    .menu a{
+        justify-content: center; /* 水平居中 */
+    }
+    .menu li{
+        margin-right: 0px;
+        padding: 10px;
+    }
+    .menu-trigger {
+        display: block;
+        cursor: pointer;
+        text-align: center;
+    }
+    #menu-checkbox:checked + .menu-trigger + .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #ededed;
+        width: 100px;
+    }
+}
+@media (max-width: 500px) {
+    .grid-container {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column; /* 垂直排列 */
+        align-items: center; 
+        width: 100%;
+    }
+    .box{
+        background-color: #8798a9;
+        border: none;
+        padding: 20px;
+        margin: 10px;
+        width: 100%; /* 框宽度占满父容器 */
+        box-sizing: border-box; /* 边框和内边距不增加宽度 */
+        min-height: 175px;
+    }
+}
