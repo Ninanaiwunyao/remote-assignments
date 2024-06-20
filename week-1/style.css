@@ -54,18 +54,18 @@ body {
 }
 .main-content{
     display: flex;
-    flex-direction: column; /* 垂直排列内容 */
-    align-items: center; /* 垂直居中 */
+    flex-direction: column; 
+    align-items: center; 
     padding: 20px;
     flex-wrap: wrap; 允许子元素换行
-    justify-content: center; /* 水平居中 */
+    justify-content: center; 
     align-items: center; 
     position: relative;
 }
 .section{
     display: flex;
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
+    justify-content: center; 
+    align-items: center; 
     font-weight: bold;
     margin-top: 40px;
     font-size: 20px;
@@ -73,8 +73,8 @@ body {
 .grid-container {
     margin-top: 40px;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 設置兩列 */
-    grid-template-rows: 1fr 1fr; /* 設置兩行 */
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
     gap: 10px; 
     width: 100%;
     max-width: 1200px;
@@ -106,15 +106,15 @@ body {
 }
 @media (max-width: 799px) {
     .menu {
-        display: block; /* 变成块级元素 */
-        text-decoration: none; /* 移除下划线 */
-        padding: 10px 0; /* 上下内边距 */
+        display: block; 
+        text-decoration: none; 
+        padding: 10px 0; 
         color: #000;
         display: none;
         margin: 10px;
     }
     .menu a{
-        justify-content: center; /* 水平居中 */
+        justify-content: center; 
     }
     .menu li{
         margin-right: 0px;
@@ -140,7 +140,7 @@ body {
     .grid-container {
         margin-top: 40px;
         display: flex;
-        flex-direction: column; /* 垂直排列 */
+        flex-direction: column; 
         align-items: center; 
         width: 100%;
     }
@@ -149,8 +149,8 @@ body {
         border: none;
         padding: 20px;
         margin: 10px;
-        width: 100%; /* 框宽度占满父容器 */
-        box-sizing: border-box; /* 边框和内边距不增加宽度 */
+        width: 100%; 
+        box-sizing: border-box; 
         min-height: 175px;
     }
 }
