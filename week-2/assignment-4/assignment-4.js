@@ -1,5 +1,5 @@
 //Request1
-const header = document.getElementsByClassName('header')[0];
+const header = document.querySelector('.header');
 header.addEventListener('click', () => {
     header.textContent = 'Have a Good Time!'
 });
@@ -16,8 +16,12 @@ closeBtn.addEventListener('click', () => {
     menuBtn.style.display = 'block';
 });
 //Request3
-const cta = document.getElementsByClassName('btn')[0];
-const box = document.getElementsByClassName('hidden-box')[0];
+const cta = document.querySelector('.btn');
+const box = document.querySelector('.hidden-box');
 cta.addEventListener('click', () => {
-    box.style.display = 'grid'
+    if (window.innerWidth <= 500) {
+        box.style.display = 'flex'; 
+    } else {
+        box.style.display = 'grid'; 
+    }
 });
