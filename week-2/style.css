@@ -115,6 +115,9 @@ body {
     .hidden-box {
         width: 100%;
     }
+    .menu-btn, .mobile-menu, .close-btn{
+        display: none;
+    }
 }
 @media (min-width: 500px) and (max-width: 799px) {
     .menu-btn {
@@ -219,4 +222,70 @@ body {
         box-sizing: border-box; 
         min-height: 175px;
     }
+    .menu-btn {
+        font-size: 24px;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+        display: block;
+    }
+    .menu {
+        display: none;
+    }
+    .menu li {
+        margin-right: 0px;
+        padding: 10px;
+    }
+    /* .menu-trigger {
+        display: block;
+        cursor: pointer;
+        text-align: center;
+    } */
+    
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 20vw;
+        height: 100%;
+        background-color: #ffffff;
+        color: black;
+        transition: right 0.3s ease;
+        padding: 20px;
+        z-index: 1000;
+        display: block; 
+    }
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0; 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .mobile-menu ul li {
+        margin-bottom: 20px; 
+        text-align: left; 
+    }
+    .mobile-list a {
+        text-decoration: none;
+        color: black;
+    }
+    .mobile-menu.show {
+        right: 0;
+    }
+    
+    .close-btn {
+        font-size: 24px;
+        cursor: pointer;
+        display: block; 
+        position: absolute;
+        right: 20px;
+        top: 0;
+        margin: 14px;
+    }
+    
 }
