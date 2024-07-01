@@ -116,7 +116,7 @@ body {
         width: 100%;
     }
 }
-@media (max-width: 799px) {
+@media (min-width: 500px) and (max-width: 799px) {
     .menu-btn {
         font-size: 24px;
         cursor: pointer;
@@ -195,7 +195,7 @@ body {
         width: 100px;
     } */
 }
-@media (max-width: 500px) {
+@media (max-width: 499px) {
     .grid-container {
         margin-top: 40px;
         display: flex;

@@ -14,9 +14,10 @@ console.log(max([5, 2, 7, 1, 6])); // expected output: 7
 function calculate2(args) {
     let output = ''
     let keys = Object.keys(args);
-    let n1 = args[keys[0]];
-    let n2 = args[keys[1]];
-    let op = args[keys[2]];
+    // let n1 = args[keys[0]];
+    // let n2 = args[keys[1]];
+    // let op = args[keys[2]];
+    let { n1, n2, op } = args; 
     if ( op === "+" ){
         output = n1 + n2
     }else if ( op === "-" ){
@@ -81,10 +82,19 @@ closeBtn.addEventListener('click', () => {
 //Request3
 const cta = document.querySelector('.btn');
 const box = document.querySelector('.hidden-box');
-cta.addEventListener('click', () => {
-    if (window.innerWidth <= 500) {
-        box.style.display = 'flex'; 
+function adjustBoxDisplay() {
+    if (window.innerWidth < 500) {
+        box.style.display = 'flex';
     } else {
-        box.style.display = 'grid'; 
+        box.style.display = 'grid';
+    }
+}
+cta.addEventListener('click', () => {
+    box.style.display = 'block'; 
+    adjustBoxDisplay();
+});
+window.addEventListener('resize', () => {
+    if (box.style.display !== 'none') {
+        adjustBoxDisplay();
     }
 });
