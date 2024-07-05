@@ -1,6 +1,15 @@
 calculateButton.addEventListener('click', function() {
-    const number = document.getElementById('numInput').value;
-    
+    const input = document.getElementById('numInput').value.trim();
+    if (!input) {
+        document.getElementById('result').textContent = 'Lack of Parameter';
+        return;
+    }
+    const number = parseInt(document.getElementById('numInput').value);
+
+    if (isNaN(number) || number <= 0 || !Number.isInteger(number )) {
+        document.getElementById('result').textContent = 'Wrong Parameter';
+        return;
+    }
     fetch(`/getData?number=${number}`)
         .then(res => {
             if(!res.ok){
