@@ -1,4 +1,4 @@
-calculateButton.addEventListener('click', function() {
+calculateButton.addEventListener('click', () => {
     const input = document.getElementById('numInput').value.trim();
     if (!input) {
         document.getElementById('result').textContent = 'Lack of Parameter';
