@@ -1,27 +1,29 @@
-calculateButton.addEventListener('click', () => {
+document.getElementById('calculateButton').addEventListener('click', () => {
     const input = document.getElementById('numInput').value.trim();
     if (!input) {
         document.getElementById('result').textContent = 'Lack of Parameter';
         return;
     }
-    const number = parseInt(document.getElementById('numInput').value);
+    const number = parseInt(input);
 
-    if (isNaN(number) || number <= 0 || !Number.isInteger(number )) {
-        document.getElementById('result').textContent = 'Wrong Parameter';
-        return;
-    }
     fetch(`/getData?number=${number}`)
         .then(res => {
-            if(!res.ok){
-                throw new Error('network response error')
+            if (!res.ok) {
+                return res.json().then(err => {
+                    throw new Error(err.message);
+                });
             }
             return res.json();
         })
         .then(data => {
-            document.getElementById('result').textContent = `sum from 1 to ${number} is ${data}`;
+            if (data.sum !== undefined) {
+                document.getElementById('result').textContent = `Sum from 1 to ${number} is ${data.sum}`;
+            } else {
+                document.getElementById('result').textContent = `Error: ${data.message}`;
+            }
         })
         .catch(err => {
             console.error('There was a problem with the fetch operation:', err);
-            document.getElementById('result').textContent = 'Error: Unable to fetch data.';
-        })
+            document.getElementById('result').textContent = `Error: ${err.message}`;
+        });
 });

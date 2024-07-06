@@ -14,11 +14,15 @@ app.get('/', (req, res) => {
 app.get('/getData', (req, res) => {
     const number = parseInt(req.query.number);
     if (isNaN(number)) {
-        res.status(400).send('Bad Request: number query parameter is required and should be a valid number.');
-    } else {
-        const sum = (number * (number + 1)) / 2;
-        res.send(sum.toString());
+        res.status(400).json({ message: 'Bad Request: number query parameter is required and should be a valid number.' });
+        return;
     }
+    if (number <= 0 || !Number.isInteger(number)) {
+        res.status(400).json({ message: 'Wrong Parameter' });
+        return;
+    } 
+    const sum = (number * (number + 1)) / 2;
+    res.json({ sum: sum });
 });
 
 app.get('/name', (req, res) => {
@@ -29,7 +33,7 @@ app.get('/name', (req, res) => {
     } else {
         res.send(`
             <form action="/trackName" method="post">
-                <label for="name">Please Enter your name:</label>
+                <label for="name">Please enter your name:</label>
                 <input type="text" id="name" name="name" required></input>
                 <button type="submit">Submit</button>
             </form>
@@ -39,7 +43,7 @@ app.get('/name', (req, res) => {
 
 app.post('/trackName', (req, res) => {
     const userName = req.body.name;
-    res.cookie('userName', userName);
+    res.cookie('userName', userName, { maxAge: 900000 }); 
     res.redirect('/name');
 });
 
