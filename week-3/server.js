@@ -12,12 +12,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/getData', (req, res) => {
-    const number = parseInt(req.query.number);
-    if (isNaN(number)) {
-        res.status(400).json({ message: 'Bad Request: number query parameter is required and should be a valid number.' });
+    if (req.query.number === undefined) {
+        res.status(400).json({ message: 'Lack of Parameter' });
         return;
     }
-    if (number <= 0 || !Number.isInteger(number)) {
+    const number = parseInt(req.query.number);
+    if (isNaN(number) || number <= 0 || !Number.isInteger(number)) {
         res.status(400).json({ message: 'Wrong Parameter' });
         return;
     } 
