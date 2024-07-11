@@ -2,7 +2,7 @@
   "name": "assignment-3",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ninanaiwunyao.github.io/remote-assignments/week-4/assignment-3",
+  "homepage": "https://ninanaiwunyao.github.io/remote-assignments",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
