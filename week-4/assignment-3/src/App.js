@@ -5,12 +5,12 @@ import MobileMenu from "./Components/MobileMenu";
 import Header from "./Components/Header";
 import MainContent from "./Components/MainContent";
 
-function App() {
+const App = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [boxDisplay, setBoxDisplay] = useState("none");
 
   useEffect(() => {
-    function handleResize() {
+    const handleResize = () => {
       if (boxDisplay !== "none") {
         if (window.innerWidth < 500) {
           setBoxDisplay("flex");

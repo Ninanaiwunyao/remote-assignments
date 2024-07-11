@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Header() {
+const Header = () => {
   const [welcomeMessage, setWelcomeMessage] = useState('Welcome Message');
 
   const handleClick = () => {
