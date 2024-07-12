@@ -25,8 +25,7 @@ function render(data) {
     .join("\n\n");
 }
 
-const url =
-  "https://remote-assignment.s3.ap-northeast-1.amazonaws.com/products";
+const url = "https://remote-assignment.s3.ap-northeast-1.amazonaws.com/products";
 
 ajax(url).then((data) => {
   render(data);
